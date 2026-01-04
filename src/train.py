@@ -69,7 +69,7 @@ def main(epochs=2, batch_size=128, lr=1e-3):
         batch_size: batch size for training/validation
         lr: learning rate
     """
-    # Make sure we have a place to save the model
+    # place to save the model
     os.makedirs("models", exist_ok=True)
 
     # Choose device (cpu/cuda/mps)
@@ -82,7 +82,6 @@ def main(epochs=2, batch_size=128, lr=1e-3):
     val_ds = CleanVsCorruptDataset(train=False, p_corrupt=0.5)
 
     # Wrap datasets in DataLoaders for batching
-    # NOTE: if you get DataLoader issues on Mac, set num_workers=0
     train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True, num_workers=2)
     val_loader = DataLoader(val_ds, batch_size=batch_size, shuffle=False, num_workers=2)
 
