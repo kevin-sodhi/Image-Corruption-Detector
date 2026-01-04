@@ -65,7 +65,7 @@ outputs/                   # preview images created by preview_corruptions.py
 
 ## Setup
 
-### Option A: Conda (recommended)
+### Option A: Conda 
 ```bash
     conda create -n amdml python=3.12 -y
     conda activate amdml
